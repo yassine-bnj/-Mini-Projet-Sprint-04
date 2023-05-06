@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+ layout:decorator="template">
+ 
+ <link rel="stylesheet" type="text/css"
+href="webjars/bootstrap/4.0.0-2/css/bootstrap.min.css" />
+<head>
+<meta charset="utf-8">
+<title>Connexion</title>
+</head>
+<body>
+
+
+<div class="col-11 col-md-7 col-xl-6 ml-auto mr-auto mt-5">
+	<div class="card login-form">
+	<div class="card-body">
+		<h3 class="card-title text-center">Connexion</h3>
+		<div class="card-text">
+			<!--
+			<div class="alert alert-danger alert-dismissible fade show" role="alert">Incorrect username or password.</div> -->
+			<form th:action="@{login}" method="post">
+				<!-- to error: add class "has-danger" -->
+			
+<div th:if="${errorMessage}" class="alert alert-danger" role="alert">
+    <span th:text="${errorMessage}"></span>
+</div>
+
+				<div class="form-group">
+					<label for="exampleInput1">Utilisateur :</label>
+					<input type="text" name="username" class="form-control form-control-sm" id="exampleInput1" aria-describedby="emailHelp">
+				</div>
+				<div class="form-group">
+					<label for="exampleInputPassword1">Mot de passe :</label>
+					
+					<input type="password" name="password" class="form-control form-control-sm" id="exampleInputPassword1">
+				</div>
+				<button type="submit" class="btn btn-primary btn-block">Connexion</button>
+				
+				
+			</form>
+		</div>
+	</div>
+</div>
+</div>
+
+
+</body>
+</html>
